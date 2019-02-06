@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EachGroup from './eachGroup.js'
+import EachGroup from '../components/eachGroup.js'
 
 
 class settingsPage extends Component {
