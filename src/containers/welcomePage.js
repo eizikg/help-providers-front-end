@@ -22,7 +22,7 @@ class welcomePage extends Component{
   }
 
   render(){
-
+    console.log(this.props.user)
     if(this.state.step === 0){
     return (
       <div>
@@ -33,7 +33,11 @@ class welcomePage extends Component{
          <button type="button" className="btn btn-default" onClick={() => {this.signUp()}}>Create An Account</button>
           <button type="button" className="btn btn-primary" onClick={() => {this.login()}}>Login</button>
         </div>
-        :<button type="button" className="btn btn-primary" onClick={() => {this.props.nextStep()}}>Members</button>
+        :
+        <div className="navbar-inner">
+        <button type="button" className="btn btn-default" onClick={() => {this.props.logOut()}}>Log Out</button>
+        <button type="button" className="btn btn-primary" onClick={() => {this.props.nextStep(false, this.props.user)}}>Members</button>
+        </div>
       }
       </div>
      </div>

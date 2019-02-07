@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EachGroup from '../components/eachGroup.js'
+import NewGroup from '../components/newGroup.js'
 
 
 class settingsPage extends Component {
@@ -25,8 +26,13 @@ group = ()=>{
 
 
 render (){
-  return (<div> {this.state.groupData.map(g => <EachGroup groupData={g} key={g.id}/>)}</div>)
-    // <EachGroup/>
+  console.log(this.props)
+  return (
+    <div>
+      {this.state.groupData.map((g) => <EachGroup memberRoute={this.props.memberRoute} groupData={g} key={g.id} user={this.props.user}/>)}
+      <NewGroup user={this.props.user}/>
+    </div>
+  )
 
 }
 

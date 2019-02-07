@@ -3,14 +3,22 @@ import React, { Component } from 'react';
 
 class eventTop extends Component {
   render(){
+    const style = {
+      width: "18rem"
+    }
+    console.log(this.props)
     return (
-      <div className="item">
-        <div className="pad15">
-            <p className="lead">{this.props.groupData.description}</p>
-            <p>{this.props.groupData.active ? "active": "not-active" }</p>
-            <p>{this.props.groupData.volounteers_required}</p>
+      <div>
+
+          <div className="card" style={this.style}>
+            <div className="card-body">
+              <h5 className="card-title">{this.props.groupData.description}</h5>
+              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button href="#" className="btn btn-primary">Details</button>
+            </div>
+
         </div>
-     </div>
+      </div>
     )
   }
 }

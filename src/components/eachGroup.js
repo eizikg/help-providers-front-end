@@ -2,6 +2,24 @@ import React, { Component } from 'react';
 
 const eachGroup = (props) =>{
 
+  let joinGroup = (e)=>{
+    console.log(props.user.id)
+    fetch('http://localhost:3000/api/v1/group_volounteers', {
+      method: "POST",
+      headers: {"Content-Type": "application/json", Authorization: localStorage.token},
+      body: JSON.stringify({
+        volounteer_id: props.user.id,
+         group_id: props.groupData.id
+        })
+    })
+    .then(res => res.json())
+    .then(data => props.memberRoute())
+  }
+
+  // let joinGroup = ()=> {
+  //
+  // }
+
   return (
                <div>
                <div className="container">
@@ -20,7 +38,7 @@ const eachGroup = (props) =>{
     							<span>{props.groupData.description}</span>
     						</div>
 
-    						<button className="fbtn btn-primary btn-block" >Join Group</button>
+    						<button id={props.groupData.id} className="fbtn btn-primary btn-block" onClick={() => joinGroup()} >Join Group</button>
 
     					 </div>
     				       </div>
