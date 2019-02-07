@@ -13,7 +13,7 @@ const eachGroup = (props) =>{
         })
     })
     .then(res => res.json())
-    .then(data => props.memberRoute())
+    .then(data => props.memberRoute(props.user))
   }
 
   // let joinGroup = ()=> {

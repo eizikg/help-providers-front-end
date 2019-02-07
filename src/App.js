@@ -107,9 +107,11 @@ nextStep = (is_new_user=false, user_object) => {
 }
 }
 
-memberRoute= () => {
+memberRoute= (user) => {
+  console.log(this.state.user)
   this.setState({
-    step: 2
+    step: 2,
+    user: user
   })
 }
 
